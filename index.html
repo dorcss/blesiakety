@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Blesia 🤍</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ================= GLOBAL ================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffe6f0, #ffd6e0, #fcd9f6, #ffe6f0);
+            color: #444;
+            scroll-behavior: smooth;
+        }
+
+        /* ================= FLOATING HEARTS ================= */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            color: #f48fb1;
+            opacity: .3;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-120vh);
+            }
+        }
+
+        /* ================= CONTAINER ================= */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* ================= TYPOGRAPHY ================= */
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #c2185b;
+        }
+
+        h1 {
+            font-size: 54px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 750px;
+            margin: 18px auto;
+            line-height: 1.6;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, #fff0f8, #ffe6f0);
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 2px solid #f8bbd0;
+        }
+
+        /* ================= TYPING EFFECT ================= */
+        .typing-text {
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+            margin: auto;
+            white-space: pre-wrap;
+            overflow: hidden;
+            border-right: 3px solid #c2185b;
+            animation: typing 6s steps(150) 1 forwards, blink 0.7s infinite step-end;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* ================= CARD CENTERED VERTICALLY ================= */
+        .card {
+            background: linear-gradient(145deg, #fff0f8, #ffe6f0);
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            margin: 40px 0;
+            border: 1px solid #f8bbd0;
+
+            display: flex;
+            /* Flex container */
+            flex-direction: column;
+            /* Stack content vertically */
+            justify-content: center;
+            /* Center vertically */
+            align-items: center;
+            /* Center horizontally */
+            text-align: center;
+            /* Center text */
+        }
+
+        /* ================= GALLERY ================= */
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        /* ================= COMPLIMENT GRID ================= */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .small-card {
+            background: linear-gradient(145deg, #ffe6f0, #ffd6e0);
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            font-weight: 500;
+            color: #c2185b;
+            font-size: 18px;
+        }
+
+        /* ================= BUTTON ================= */
+        button {
+            background: #c2185b;
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #ad1457;
+            transform: scale(1.05);
+        }
+
+        /* ================= SECRET MESSAGE ================= */
+        .secret {
+            display: none;
+            margin-top: 25px;
+            color: #c2185b;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #c2185b;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* ================= RESPONSIVE FOR MOBILE ================= */
+        @media (max-width:768px) {
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .hero-card {
+                padding: 30px;
+            }
+
+            .card {
+                padding: 30px;
+                margin: 30px 0;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery img {
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= SOFT MUSIC ================= -->
+    <audio id="bgMusic" loop>
+        <source src="soft_music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ================= FLOATING HEARTS ================= -->
+    <script>
+        for (let i = 0; i < 20; i++) {
+            let heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤";
+            heart.style.left = Math.random() * 100 + "%";
+            heart.style.fontSize = (12 + Math.random() * 18) + "px";
+            heart.style.animationDuration = (8 + Math.random() * 6) + "s";
+            document.body.appendChild(heart);
+        }
+    </script>
+
+    <script>
+        // Safe autoplay after first click anywhere
+        window.addEventListener("click", function () {
+            var music = document.getElementById("bgMusic");
+            if (music.paused) {
+                music.play();
+            }
+        });
+    </script>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="hero-card">
+            <h1>Dear Blesia 🤍</h1>
+            <div class="typing-text">
+                This small digital gift is made with love because you are someone very special to me.
+                I wanted to create a little space on the internet that belongs only to you.
+                A place that reminds you how appreciated, admired, and valued you are.
+                Something soft, beautiful, and elegant… just like you.
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FIRST IMAGE ================= -->
+    <section>
+        <div class="container">
+            <img src="a.png" alt="Blesia Picture 1">
+        </div>
+    </section>
+
+    <!-- ================= WHY YOU ARE AMAZING CENTERED ================= -->
+    <section style="min-height:60vh; display:flex; align-items:center; justify-content:center;">
+        <div class="container card">
+            <h2>Why You Are Amazing</h2>
+            <p>
+                You carry yourself with grace and confidence.
+                Your smile brightens rooms, your kindness touches hearts, and your presence makes life lighter for
+                everyone around you.
+            </p>
+            <p>
+                I wish that you keep that smile forever, keep shining, and keep being the incredible woman you are
+                becoming every day.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= SECOND IMAGE ================= -->
+    <section>
+        <div class="container">
+            <img src="b.png" alt="Blesia Picture 2">
+        </div>
+    </section>
+
+    <!-- ================= PRAYER CENTERED ================= -->
+    <section style="min-height:60vh; display:flex; align-items:center; justify-content:center;">
+        <div class="container card">
+            <h2>A Prayer For You 🤍</h2>
+            <p>
+                May God protect you wherever you go.
+                May He guide every step you take and open doors of success and peace for you.
+                May your life be filled with happiness, love, and endless blessings.
+                May all your dreams come true and may you always feel valued and deeply cherished.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= COMPLIMENTS ================= -->
+    <section>
+        <div class="container">
+            <h2>Things That Describe You</h2>
+            <div class="grid">
+                <div class="small-card">🤍 Classy</div>
+                <div class="small-card">🤍 Strong</div>
+                <div class="small-card">🤍 Kind</div>
+                <div class="small-card">🤍 Intelligent</div>
+                <div class="small-card">🤍 Beautiful</div>
+                <div class="small-card">🤍 Inspiring</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECRET MESSAGE ================= -->
+    <section>
+        <div class="container">
+            <button onclick="showSecret()">Open Secret Message 💌</button>
+            <p id="secret" class="secret">
+                You are not just my friend… you are a blessing in my life.
+                Thank you for your laughter, your heart, and your beautiful soul.
+                I will always appreciate you more than words can say 🤍
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        All rights reserved Printedlove_mag
+    </footer>
+
+    <script>
+        function showSecret() { document.getElementById("secret").style.display = "block"; }
+    </script>
+
+</body>
+
+</html>
